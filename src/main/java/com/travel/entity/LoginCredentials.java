@@ -25,10 +25,10 @@ public class LoginCredentials {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
 	
-	@Column(length = 30, nullable = false)
+	@Column(length = 50, nullable = false)
 	private String name;
 	
-	@Column(length = 50, nullable = false, unique = true)
+	@Column(length = 60, nullable = false, unique = true)
 	private String email;
 	
 	@Column(length = 15, nullable = false, unique = true)
