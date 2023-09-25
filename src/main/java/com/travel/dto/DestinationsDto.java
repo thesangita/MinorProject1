@@ -2,10 +2,14 @@ package com.travel.dto;
 
 import com.travel.entity.StateAndUT;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+@Getter
+@Setter
 public class DestinationsDto {
 
     private int destId;
@@ -32,72 +36,5 @@ public class DestinationsDto {
 
     private float popularityScore;
 
-    @NotNull(message = "State/UT information is required")
     private StateAndUT stateAndUT;
-
-    // Getters and setters for all fields
-
-    public int getDestId() {
-        return destId;
-    }
-
-    public void setDestId(int destId) {
-        this.destId = destId;
-    }
-
-    public String getDestName() {
-        return destName;
-    }
-
-    public void setDestName(String destName) {
-        this.destName = destName;
-    }
-
-    public String getImageName() {
-        return imageName;
-    }
-
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
-    }
-
-    public String getImageLocation() {
-        return imageLocation;
-    }
-
-    public void setImageLocation(String imageLocation) {
-        this.imageLocation = imageLocation;
-    }
-
-    public String getImageDescription() {
-        return imageDescription;
-    }
-
-    public void setImageDescription(String imageDescription) {
-        this.imageDescription = imageDescription;
-    }
-
-    public String getDestType() {
-        return destType;
-    }
-
-    public void setDestType(String destType) {
-        this.destType = destType;
-    }
-
-    public float getPopularityScore() {
-        return popularityScore;
-    }
-
-    public void setPopularityScore(float popularityScore) {
-        this.popularityScore = popularityScore;
-    }
-
-    public StateAndUT getStateAndUT() {
-        return stateAndUT;
-    }
-
-    public void setStateAndUT(StateAndUT stateAndUT) {
-        this.stateAndUT = stateAndUT;
-    }
 }

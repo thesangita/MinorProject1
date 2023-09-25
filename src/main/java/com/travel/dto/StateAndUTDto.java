@@ -1,8 +1,18 @@
 package com.travel.dto;
 
+import java.util.List;
+
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.travel.entity.Destinations;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class StateAndUTDto {
 
     private int stateAndUtId;
@@ -10,24 +20,7 @@ public class StateAndUTDto {
     @Size(max = 50, message = "Max. limit is 50")
     @NotNull(message = "State or UT name is required")
     private String stateAndUtName;
-
-    // Getter for 'stateAndUtId'
-    public int getStateAndUtId() {
-        return stateAndUtId;
-    }
-
-    // Setter for 'stateAndUtId'
-    public void setStateAndUtId(int stateAndUtId) {
-        this.stateAndUtId = stateAndUtId;
-    }
-
-    // Getter for 'stateAndUtName'
-    public String getStateAndUtName() {
-        return stateAndUtName;
-    }
-
-    // Setter for 'stateAndUtName'
-    public void setStateAndUtName(String stateAndUtName) {
-        this.stateAndUtName = stateAndUtName;
-    }
+    
+    @OneToMany
+	private List<Destinations> destinations;  
 }

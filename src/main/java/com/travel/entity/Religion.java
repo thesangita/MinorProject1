@@ -15,7 +15,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Religion extends Destinations {
 	
-	@Column(length = 30, nullable = false)
+	@Column(length = 20, nullable = false)
 	private String religionType;
-
 }

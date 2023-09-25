@@ -17,6 +17,6 @@ public class SeaBeach extends Destinations {
 	
 	private boolean coralOrNot;
 	
-	@Column(length = 100, nullable = true)
+	@Column(length = 50, nullable = true)
 	private String waveStrength;
 }
