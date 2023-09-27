@@ -5,7 +5,7 @@ import com.travel.dto.LoginCredentialsDto;
 import com.travel.entity.LoginCredentials;
 
 public class LoginCredentialsConverter {
-	
+
 	//converts LoginCredentials Dto to LoginCredentials Entity
 	public LoginCredentials convertDtoToLoginCredEntity(LoginCredentialsDto lcDto)
 	{
