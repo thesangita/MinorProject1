@@ -8,7 +8,7 @@ import com.travel.entity.LoginCredentials;
 
 @Component
 public class LoginCredentialsConverter {
-	
+
 	//converts LoginCredentials Dto to LoginCredentials Entity
 	public LoginCredentials convertDtoToLoginCredEntity(LoginCredentialsDto lcDto)
 	{
