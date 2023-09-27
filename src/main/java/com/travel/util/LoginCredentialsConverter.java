@@ -1,9 +1,12 @@
 package com.travel.util;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
+
 import com.travel.dto.LoginCredentialsDto;
 import com.travel.entity.LoginCredentials;
 
+@Component
 public class LoginCredentialsConverter {
 	
 	//converts LoginCredentials Dto to LoginCredentials Entity
