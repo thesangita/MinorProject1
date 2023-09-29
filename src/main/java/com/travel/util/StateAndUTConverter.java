@@ -1,9 +1,12 @@
 package com.travel.util;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
+
 import com.travel.dto.StateAndUTDto;
 import com.travel.entity.StateAndUT;
 
+@Component
 public class StateAndUTConverter {
     
     // Converts StateAndUTDto to StateAndUT Entity

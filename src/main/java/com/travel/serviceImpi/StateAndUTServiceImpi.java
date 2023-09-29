@@ -16,13 +16,13 @@ public class StateAndUTServiceImpi implements StateAndUTService {
 	StateAndUTRepository stateAndUTRepository;
 	
 	@Autowired
-	StateAndUTConverter statreAndUTConverter;
+	StateAndUTConverter stateAndUTConverter;
 
 	@Override
 	public StateAndUTDto saveStateAndUT(StateAndUT stateAndUT) {
 		
 		stateAndUTRepository.save(stateAndUT);
 	    
-	    return statreAndUTConverter.convertEntityToDto(stateAndUT);
+	    return stateAndUTConverter.convertEntityToDto(stateAndUT);
 	}
 }
