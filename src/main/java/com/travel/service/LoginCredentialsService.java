@@ -1,5 +1,9 @@
 package com.travel.service;
 
-public class LoginCredentialsService {
+import com.travel.dto.LoginCredentialsDto;
+import com.travel.entity.LoginCredentials;
 
+public interface LoginCredentialsService {
+	
+	LoginCredentialsDto saveLoginCredentials(LoginCredentials loginCredentials);
 }

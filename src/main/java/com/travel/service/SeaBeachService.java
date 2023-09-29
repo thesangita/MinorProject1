@@ -1,5 +1,9 @@
 package com.travel.service;
 
-public class SeaBeachService {
+import com.travel.dto.SeaBeachDto;
+import com.travel.entity.SeaBeach;
 
+public interface SeaBeachService {
+	
+	SeaBeachDto saveSeaBeach(SeaBeach seaBeachDto);
 }

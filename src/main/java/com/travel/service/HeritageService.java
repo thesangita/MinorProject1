@@ -1,5 +1,9 @@
 package com.travel.service;
 
-public class HeritageService {
+import com.travel.dto.HeritageDto;
+import com.travel.entity.Heritage;
 
+public interface HeritageService {
+	
+	HeritageDto saveHeritage(Heritage heritage);
 }

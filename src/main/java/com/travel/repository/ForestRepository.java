@@ -1,5 +1,8 @@
 package com.travel.repository;
 
-public class ForestRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.travel.entity.Forest;
+
+public interface ForestRepository extends JpaRepository<Forest, Integer> {
 
 }

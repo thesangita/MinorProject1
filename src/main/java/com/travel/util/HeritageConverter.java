@@ -1,9 +1,11 @@
 package com.travel.util;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
+
 import com.travel.dto.HeritageDto;
 import com.travel.entity.Heritage;
-
+@Component
 public class HeritageConverter {
     
     // Converts HeritageDto to Heritage Entity

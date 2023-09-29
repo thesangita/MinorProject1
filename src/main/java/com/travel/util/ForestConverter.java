@@ -1,9 +1,11 @@
 package com.travel.util;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
+
 import com.travel.dto.ForestDto;
 import com.travel.entity.Forest;
-
+@Component
 public class ForestConverter {
     
     // Converts ForestDto to Forest Entity

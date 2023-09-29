@@ -1,5 +1,9 @@
 package com.travel.service;
 
-public class DestinationsService {
+import com.travel.dto.DestinationsDto;
+import com.travel.entity.Destinations;
 
+public interface DestinationsService {
+	
+	DestinationsDto saveDestinations(Destinations destinations);
 }

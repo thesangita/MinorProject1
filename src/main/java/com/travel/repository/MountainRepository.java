@@ -1,5 +1,8 @@
 package com.travel.repository;
 
-public class MountainRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.travel.entity.Mountain;
+
+public interface MountainRepository extends JpaRepository<Mountain, Integer> {
 
 }

@@ -1,5 +1,8 @@
 package com.travel.repository;
 
-public class ReligionRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.travel.entity.Religion;
+
+public interface ReligionRepository extends JpaRepository<Religion, Integer> {
 
 }

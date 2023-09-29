@@ -1,5 +1,9 @@
 package com.travel.service;
 
-public class ForestService {
+import com.travel.dto.ForestDto;
+import com.travel.entity.Forest;
 
+public interface ForestService {
+	
+	ForestDto saveForest(Forest forest);
 }

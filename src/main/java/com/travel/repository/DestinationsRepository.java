@@ -1,5 +1,8 @@
 package com.travel.repository;
 
-public class DestinationsRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.travel.entity.Destinations;
+
+public interface DestinationsRepository extends JpaRepository<Destinations, Integer> {
 
 }
