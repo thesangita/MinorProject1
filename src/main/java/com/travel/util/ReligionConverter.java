@@ -1,9 +1,11 @@
 package com.travel.util;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
+
 import com.travel.dto.ReligionDto;
 import com.travel.entity.Religion;
-
+@Component
 public class ReligionConverter {
     
     // Converts ReligionDto to Religion Entity

@@ -6,4 +6,5 @@ import com.travel.entity.StateAndUT;
 
 public interface StateAndUTRepository extends JpaRepository<StateAndUT, Integer> {
 
+	
 }

@@ -1,9 +1,11 @@
 package com.travel.util;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
+
 import com.travel.dto.MountainDto;
 import com.travel.entity.Mountain;
-
+@Component
 public class MountainConverter {
     
     // Converts MountainDto to Mountain Entity

@@ -1,9 +1,11 @@
 package com.travel.util;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
+
 import com.travel.dto.DestinationsDto;
 import com.travel.entity.Destinations;
-
+@Component
 public class DestinationsConverter {
     
     // Converts DestinationsDto to Destination Entity

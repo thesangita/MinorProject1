@@ -1,9 +1,11 @@
 package com.travel.util;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Component;
+
 import com.travel.dto.SeaBeachDto;
 import com.travel.entity.SeaBeach;
-
+@Component
 public class SeaBeachConverter {
     
     // Converts SeaBeachDto to SeaBeach Entity

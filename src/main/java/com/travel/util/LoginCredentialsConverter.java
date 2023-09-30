@@ -10,7 +10,7 @@ import com.travel.entity.LoginCredentials;
 public class LoginCredentialsConverter {
 
 	//converts LoginCredentials Dto to LoginCredentials Entity
-	public LoginCredentials convertDtoToLoginCredEntity(LoginCredentialsDto lcDto)
+	public LoginCredentials convertDtoToEntity(LoginCredentialsDto lcDto)
 	{
 		LoginCredentials lc = new LoginCredentials();
 		
@@ -22,7 +22,7 @@ public class LoginCredentialsConverter {
 	}
 	
 	//converts LoginCredentials Entity to LoginCredentials Dto
-	public LoginCredentialsDto convertEntityToLoginCredDto(LoginCredentials lc)
+	public LoginCredentialsDto convertEntityToDto(LoginCredentials lc)
 	{
 		LoginCredentialsDto lcDto = new LoginCredentialsDto();
 		
