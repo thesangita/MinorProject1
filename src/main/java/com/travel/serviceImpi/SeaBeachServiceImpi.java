@@ -21,7 +21,7 @@ public class SeaBeachServiceImpi implements SeaBeachService {
 	@Override
 	public SeaBeachDto saveSeaBeach(SeaBeach seaBeach) {
 		
-		SeaBeachRepository.save(seaBeach);
+		seaBeachRepository.save(seaBeach);
 	    
 	    return seaBeachConverter.convertEntityToDto(seaBeach);
 	}
