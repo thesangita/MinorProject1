@@ -25,4 +25,11 @@ public class SeaBeachServiceImpi implements SeaBeachService {
 	    
 	    return seaBeachConverter.convertEntityToDto(seaBeach);
 	}
+
+	@Override
+	public void deleteSeaBeachByName(String seaBeachName) {
+		
+		SeaBeach seaBeach = seaBeachRepository.findSeaBeachByName(seaBeachName);
+		seaBeachRepository.delete(seaBeach);		
+	}
 }

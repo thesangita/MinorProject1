@@ -6,4 +6,5 @@ import com.travel.entity.Heritage;
 public interface HeritageService {
 	
 	HeritageDto saveHeritage(Heritage heritage);
+	void deleteHeritagePlaceByName(String heritagePlaceName) ;
 }

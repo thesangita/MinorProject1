@@ -6,4 +6,5 @@ import com.travel.entity.Forest;
 public interface ForestService {
 	
 	ForestDto saveForest(Forest forest);
+	void deleteForestByName(String forestName) ;
 }

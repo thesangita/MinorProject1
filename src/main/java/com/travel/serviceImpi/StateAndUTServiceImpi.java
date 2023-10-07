@@ -54,5 +54,12 @@ public class StateAndUTServiceImpi implements StateAndUTService {
 	    
 	    return stateAndUTConverter.convertEntityToDto(stateAndUT);
 	}
+
+	@Override
+	public void deleteStateAndUTByName(String stateAndUTName) {
+		
+		StateAndUT stateAndUT = stateAndUTRepository.findStateAndUTByName(stateAndUTName);
+		stateAndUTRepository.delete(stateAndUT);
+	}
 }
 

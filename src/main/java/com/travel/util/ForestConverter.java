@@ -9,26 +9,26 @@ import com.travel.entity.Forest;
 public class ForestConverter {
     
     // Converts ForestDto to Forest Entity
-    public Forest convertDtoToEntity(ForestDto dto) {
-        Forest entity = new Forest();
+    public Forest convertDtoToEntity(ForestDto forestDto) {
+        Forest forest = new Forest();
 
-        if (dto != null) {
+        if (forestDto != null) {
             // Copy properties from ForestDto to Forest entity
-            BeanUtils.copyProperties(dto, entity);
+            BeanUtils.copyProperties(forestDto, forest);
             
         }
-        return entity;
+        return forest;
     }
 
     // Converts Forest Entity to ForestDto
-    public ForestDto convertEntityToDto(Forest entity) {
-        ForestDto dto = new ForestDto();
+    public ForestDto convertEntityToDto(Forest forest) {
+        ForestDto forestDto = new ForestDto();
 
-        if (entity != null) {
+        if (forest != null) {
             // Copy properties from Forest entity to ForestDto
-            BeanUtils.copyProperties(entity, dto);
+            BeanUtils.copyProperties(forest, forestDto);
             
         }
-        return dto;
+        return forestDto;
     }
 }

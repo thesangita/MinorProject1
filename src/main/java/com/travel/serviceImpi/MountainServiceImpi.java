@@ -25,4 +25,11 @@ public class MountainServiceImpi implements MountainService {
 	    
 	    return mountainConverter.convertEntityToDto(mountain);
 	}
+
+	@Override
+	public void deleteMountainByName(String mountainName) {
+		
+		Mountain mountain = mountainRepository.findMountainByName(mountainName);
+		mountainRepository.delete(mountain);	
+	}
 }
