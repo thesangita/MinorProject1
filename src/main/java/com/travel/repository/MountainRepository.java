@@ -8,6 +8,6 @@ import com.travel.entity.Mountain;
 
 public interface MountainRepository extends JpaRepository<Mountain, Integer> {
 	
-	@Query("from mountain where destName=:n")
+	@Query("SELECT m FROM Mountain m WHERE m.destName = :n")
 	Mountain findMountainByName(@Param("n") String name);
 }

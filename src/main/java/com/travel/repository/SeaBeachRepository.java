@@ -8,6 +8,6 @@ import com.travel.entity.SeaBeach;
 
 public interface SeaBeachRepository extends JpaRepository<SeaBeach, Integer> {
 	
-	@Query("from SeaBeach where destName=:n")
+	@Query("SELECT s FROM SeaBeach s WHERE s.destName = :n")
 	SeaBeach findSeaBeachByName(@Param("n") String name);
 }

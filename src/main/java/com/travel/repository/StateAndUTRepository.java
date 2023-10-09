@@ -8,7 +8,7 @@ import com.travel.entity.StateAndUT;
 
 public interface StateAndUTRepository extends JpaRepository<StateAndUT, Integer> {
 	
-	@Query("from state_and_ut_details where stateAndUtName=:n")
+	@Query("SELECT s FROM StateAndUT s WHERE s.stateAndUtName = :name")
 	StateAndUT findStateAndUTByName(@Param("n") String name);
 
 	

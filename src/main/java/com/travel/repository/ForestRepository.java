@@ -8,6 +8,6 @@ import com.travel.entity.Forest;
 
 public interface ForestRepository extends JpaRepository<Forest, Integer> {
 	
-	@Query("from forest where destName=:n")
+	@Query("SELECT f FROM Forest f WHERE f.destName = :n")
 	Forest findForestByName(@Param("n") String name);
 }

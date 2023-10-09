@@ -8,6 +8,6 @@ import com.travel.entity.Heritage;
 
 public interface HeritageRepository extends JpaRepository<Heritage, Integer> {
 	
-	@Query("from heritage where destName=:n")
+	@Query("SELECT h FROM Heritage h WHERE h.destName = :n")
 	Heritage findHeritageDestByName(@Param("n") String name);
 }

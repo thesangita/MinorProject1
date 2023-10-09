@@ -33,7 +33,7 @@ public class SeaBeachController {
 		return seaBeachService.saveSeaBeach(seaBeach);
 	}
 	
-	@DeleteMapping("/deleteForestDestinationByName/{name}")
+	@DeleteMapping("/deleteSeaBeachDestinationByName/{name}")
 	public ResponseEntity<String> deleteSeaBeachByName(@PathVariable("name") String name)
 	{
 		seaBeachService.deleteSeaBeachByName(name);

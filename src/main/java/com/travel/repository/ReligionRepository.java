@@ -8,6 +8,6 @@ import com.travel.entity.Religion;
 
 public interface ReligionRepository extends JpaRepository<Religion, Integer> {
 	
-	@Query("from Religion where destName=:n")
+	@Query("SELECT r FROM Religion r WHERE r.destName = :n")
 	Religion findReligiousPlaceByName(@Param("n") String name);
 }
