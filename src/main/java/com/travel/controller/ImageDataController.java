@@ -41,30 +41,41 @@ public class ImageDataController {
 
 	    if (!fileExtension.equals("png") && !fileExtension.equals("jpg") && !fileExtension.equals("jpeg")) {
 	        // Return an error response if the file format is not supported
+//	        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+//	            .body("Unsupported file format. Please upload a PNG or JPEG image.");
+	    	
+	    	Map<String, String> errorResponse = new HashMap<>();
+	        errorResponse.put("message", "Unsupported file format. Please upload a PNG or JPEG image.");
 	        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-	            .body("Unsupported file format. Please upload a PNG or JPEG image.");
+	            .body(errorResponse);	    	
+	    	
+	    	
 	    }
 		
 		
 		
 		String uploadImage = imageDataService.uploadImage(file);
 		Map<String, String> response = new HashMap<String, String>();
-	    response.put("message", "Image uploaded successfully");
-		return ResponseEntity.status(HttpStatus.OK)
-				.body(uploadImage);
+//	    response.put("message", "Image uploaded successfully");
+//		return ResponseEntity.status(HttpStatus.OK)
+//				.body(uploadImage);
+		
+		response.put("message", "Image uploaded successfully");
+	    response.put("fileName", uploadImage); // You can add more data if needed
+	    return ResponseEntity.status(HttpStatus.OK)
+	        .body(response);
 	}
 
 	@GetMapping("/{fileName}")
-	public ResponseEntity<?> downloadImage(@PathVariable String fileName){
-		byte[] imageData=imageDataService.downloadImage(fileName);
-		
-		String contentType = getContentTypeFromFileName(fileName);
-		
-		return ResponseEntity.status(HttpStatus.OK)
-				.contentType(MediaType.valueOf("image/png"))
-				.body(imageData);
+	public ResponseEntity<byte[]> downloadImage(@PathVariable String fileName) {
+	    byte[] imageData = imageDataService.downloadImage(fileName);
+	    String contentType = getContentTypeFromFileName(fileName);
 
+	    return ResponseEntity.status(HttpStatus.OK)
+	        .contentType(MediaType.valueOf(contentType))
+	        .body(imageData);
 	}
+
 	
 	
 //to be able to fetch both png and jpg images

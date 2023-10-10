@@ -34,6 +34,6 @@ public class LoginCredentials {
 	@Column(length = 15, nullable = false, unique = true)
 	private String userName;
 	
-	@Column(length = 10, nullable = false, unique = true)
+	@Column(nullable = false, unique = true)
 	private String password;
 }

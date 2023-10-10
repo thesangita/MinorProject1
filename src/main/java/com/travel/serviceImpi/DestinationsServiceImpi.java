@@ -112,9 +112,7 @@ public class DestinationsServiceImpi implements DestinationsService {
 		exisDestinations.setDestId(destinations.getDestId());
 		exisDestinations.setDestName(destinations.getDestName());
 		exisDestinations.setDestType(destinations.getDestType());
-		exisDestinations.setImageDescription(destinations.getImageDescription());
-		exisDestinations.setLocation(destinations.getLocation());
-		exisDestinations.setRating(destinations.getRating());
+		exisDestinations.setImageDescription(destinations.getImageDescription());	
 
 		destinationsRepository.save(exisDestinations);
 		return destinationsConverter.convertEntityToDto(exisDestinations);
