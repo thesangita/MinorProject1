@@ -16,4 +16,6 @@ public interface DestinationsService {
 	List<DestinationsDto> getDestinationByType(String destinationtype);
 	
 	DestinationsDto createDestination(String destName, String destType, String location, String stateAndUT, String description, int rating);
+	
+	void assImgToDest(Long iId, int dId);
 }

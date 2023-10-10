@@ -60,4 +60,12 @@ public class DestinationsController {
 	{
 		return destinationsService.getDestinationByType(destType);
 	}
+	
+	@PostMapping("/assImgToDest/{iId}/{dId}")
+	public String assignImageToDest(@PathVariable("iId") Long imageId, @PathVariable("dId") int destinationId)
+	{
+		destinationsService.assImgToDest(imageId, destinationId);
+		
+		return "Image assigned to Destination Successfully!";
+	}
 }

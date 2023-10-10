@@ -6,10 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.travel.exception.ResourceNotFound;
 import com.travel.dto.DestinationsDto;
 import com.travel.entity.Destinations;
+import com.travel.entity.ImageData;
 import com.travel.entity.StateAndUT;
 import com.travel.repository.DestinationsRepository;
+import com.travel.repository.ImageDataRepository;
 import com.travel.repository.StateAndUTRepository;
 import com.travel.service.DestinationsService;
 import com.travel.util.DestinationsConverter;
@@ -25,6 +28,9 @@ public class DestinationsServiceImpi implements DestinationsService {
 	
 	@Autowired
 	StateAndUTRepository stateAndUTRepository;
+	
+	@Autowired
+	ImageDataRepository imageDataRepository;
 
 	@Override
 	public DestinationsDto saveDestinations(Destinations destinations) {
@@ -85,5 +91,17 @@ public class DestinationsServiceImpi implements DestinationsService {
 		}
 		destinationsRepository.save(destination);
 		return destinationsConverter.convertEntityToDto(destination);
+	}
+
+	@Override
+	public void assImgToDest(Long iId, int dId) {
+		
+		Destinations destinations = destinationsRepository.findById(dId).orElseThrow(()-> new ResourceNotFound("Destination", "id", dId));
+		
+		ImageData imageData = imageDataRepository.findById(iId).orElseThrow(()-> new ResourceNotFound("Image", "id", iId));
+		
+		destinations.setImageData(imageData);
+		
+		destinationsRepository.save(destinations);
 	}
 }
