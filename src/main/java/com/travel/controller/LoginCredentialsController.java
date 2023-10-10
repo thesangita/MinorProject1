@@ -9,21 +9,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 @RestController
-@CrossOrigin
-@RequestMapping("api/v1/user")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/user")
 public class LoginCredentialsController {
-    @Autowired
-    private LoginCredentialsService lcService;
-    @PostMapping(path = "/save")
-    public String saveLoginDetails(@RequestBody LoginCredentialsDto lcDto)
-    {
-        String name = lcService.addUser(lcDto);
-        return name;
-    }
-    @PostMapping(path = "/login")
-    public ResponseEntity<?> loginUser(@RequestBody LoginDto lDto)
-    {
-    	LoginMessage loginMessage = lcService.loginUser(lDto);
-        return ResponseEntity.ok(loginMessage);
-    }
+//    @Autowired
+//    private LoginCredentialsService lcService;
+//    @PostMapping(path = "/save")
+//    public String saveLoginDetails(@RequestBody LoginCredentialsDto lcDto)
+//    {
+//        String name = lcService.addUser(lcDto);
+//        return name;
+//    }
+//    @PostMapping(path = "/login")
+//    public ResponseEntity<?> loginUser(@RequestBody LoginDto lDto)
+//    {
+//    	LoginMessage loginMessage = lcService.loginUser(lDto);
+//        return ResponseEntity.ok(loginMessage);
+//    }
 }

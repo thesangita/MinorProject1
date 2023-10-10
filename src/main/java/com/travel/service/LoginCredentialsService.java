@@ -6,8 +6,8 @@ import com.travel.entity.LoginMessage;
 
 public interface LoginCredentialsService {
 	
-	String addUser(LoginCredentialsDto lcDto);
-
-    LoginMessage loginUser(LoginDto lDto);
+//	String addUser(LoginCredentialsDto lcDto);
+//
+//    LoginMessage loginUser(LoginDto lDto);
 
 }

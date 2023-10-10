@@ -29,21 +29,23 @@ public class Destinations {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int destId;
 	
+	//hawamahal
 	@Column(length = 50, nullable = false, unique = true)
 	private String destName;
-	
-	@Column(length = 55, nullable = false, unique = true)
-	private String imageName;
-	
+		
+	//jaipur
 	@Column(length = 100, nullable = false, unique = true)
 	private String imageLocation;
 	
+	//butifull hieracihal site in the desrt
 	@Column(length = 150, nullable = false)
 	private String imageDescription;
 	
+	//mountaun,desert
 	@Column(length = 50, nullable = false)
 	private String destType;
 	
+	//stars are calculated
 	private float popularityScore;
 	
 	@ManyToOne
