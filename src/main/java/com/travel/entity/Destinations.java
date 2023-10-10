@@ -31,12 +31,9 @@ public class Destinations {
 	
 	@Column(length = 50, nullable = false, unique = true)
 	private String destName;
-	
-//	@Column(length = 55, nullable = false, unique = true)
-//	private String imageName;
-//	
-//	@Column(length = 100, nullable = false, unique = true)
-//	private String imageLocation;
+		
+	@Column(length = 100, nullable = false, unique = false)
+	private String location;
 	
 	@Column(length = 150, nullable = true)
 	private String imageDescription;
@@ -44,7 +41,7 @@ public class Destinations {
 	@Column(length = 50, nullable = false)
 	private String destType;
 	
-	private float popularityScore;
+	private int rating;
 	
 	@ManyToOne
 	private StateAndUT stateAndUT;

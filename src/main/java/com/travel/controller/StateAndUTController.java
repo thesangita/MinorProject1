@@ -37,6 +37,6 @@ public class StateAndUTController {
 	public ResponseEntity<String> deleteStateAndUTByName(@PathVariable("name") String name)
 	{
 		stateAndUTService.deleteStateAndUTByName(name);
-		return new ResponseEntity<String>(name + "is deleted successfully!!", HttpStatus.OK);	
+		return new ResponseEntity<String>(name + " is deleted successfully!!", HttpStatus.OK);	
 	}
 }
