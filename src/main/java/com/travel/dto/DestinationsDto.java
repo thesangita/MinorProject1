@@ -1,10 +1,12 @@
 package com.travel.dto;
 
+import com.travel.entity.ImageData;
 import com.travel.entity.StateAndUT;
 
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -30,6 +32,11 @@ public class DestinationsDto {
     private String destType;
 
     private int rating;
-
-    private StateAndUT stateAndUT;
+    
+    @NotBlank(message = "State or UT name is required")
+    @Size(max = 60, message = "Max. limit is 60")
+    private String stateAndUTName;
+    
+    @OneToOne
+	private ImageData imageData;
 }

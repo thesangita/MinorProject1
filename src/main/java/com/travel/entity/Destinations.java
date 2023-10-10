@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -43,8 +42,8 @@ public class Destinations {
 	
 	private int rating;
 	
-	@ManyToOne
-	private StateAndUT stateAndUT;
+	@Column(length = 60, nullable = false)
+	private String stateAndUTName;
 	
 	@OneToOne
 	private ImageData imageData;
