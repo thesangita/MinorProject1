@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.travel.entity.ImageData;
 import com.travel.service.ImageDataService;
 
 
@@ -79,7 +80,7 @@ private String getContentTypeFromFileName(String fileName) {
 }
 
 @GetMapping("/getImage")
-public List<byte[]> getImageDataList()
+public List<ImageData> getImageDataList()
 {
 	return imageDataService.getImageList();
 }

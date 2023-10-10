@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.travel.dto.ImageDataDto;
 import com.travel.entity.ImageData;
 import com.travel.util.ImageDataComDecom;
 import com.travel.repository.ImageDataRepository;
@@ -44,18 +45,26 @@ public class ImageDataServiceImpi implements ImageDataService {
 		
 	}
 
+//	@Override
+//	public List<byte[]> getImageList() {
+//		
+//		List<ImageData> imageData = imageRepository.findAll();
+//		
+//		List<byte[]> onlyImageData = new ArrayList();
+//		
+//		for(ImageData i : imageData)
+//		{
+//			onlyImageData.add(i.getImageData());
+//		}
+//		return onlyImageData;
+//	}
+	
 	@Override
-	public List<byte[]> getImageList() {
+	public List<ImageData> getImageList() {
 		
 		List<ImageData> imageData = imageRepository.findAll();
 		
-		List<byte[]> onlyImageData = new ArrayList();
-		
-		for(ImageData i : imageData)
-		{
-			onlyImageData.add(i.getImageData());
-		}
-		return onlyImageData;
+		return imageData;
 	}
 
 }

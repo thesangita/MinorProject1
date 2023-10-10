@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.travel.entity.ImageData;
+
 public interface ImageDataService {
 
 	//method for uploading image to database 
@@ -13,5 +15,5 @@ public interface ImageDataService {
 	//method to show the image to the user
 	byte[] downloadImage(String fileName);
 	
-	List<byte[]> getImageList();
+	List<ImageData> getImageList();
 }
