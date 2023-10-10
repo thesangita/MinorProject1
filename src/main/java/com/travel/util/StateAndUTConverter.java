@@ -10,25 +10,25 @@ import com.travel.entity.StateAndUT;
 public class StateAndUTConverter {
     
     // Converts StateAndUTDto to StateAndUT Entity
-    public StateAndUT convertDtoToEntity(StateAndUTDto dto) {
-        StateAndUT entity = new StateAndUT();
+    public StateAndUT convertDtoToEntity(StateAndUTDto stateAndUTDto) {
+        StateAndUT stateAndUT = new StateAndUT();
 
-        if (dto != null) {
+        if (stateAndUTDto != null) {
             // Copy properties from StateAndUTDto to StateAndUT entity
-            BeanUtils.copyProperties(dto, entity);
+            BeanUtils.copyProperties(stateAndUTDto, stateAndUT);
         }
-        return entity;
+        return stateAndUT;
     }
 
     // Converts StateAndUT Entity to StateAndUTDto
-    public StateAndUTDto convertEntityToDto(StateAndUT entity) {
-        StateAndUTDto dto = new StateAndUTDto();
+    public StateAndUTDto convertEntityToDto(StateAndUT stateAndUT) {
+        StateAndUTDto stateAndUTDto = new StateAndUTDto();
 
-        if (entity != null) {
+        if (stateAndUT != null) {
             // Copy properties from StateAndUT entity to StateAndUTDto
-            BeanUtils.copyProperties(entity, dto);
+            BeanUtils.copyProperties(stateAndUT, stateAndUTDto);
             
         }
-        return dto;
+        return stateAndUTDto;
     }
 }

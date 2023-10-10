@@ -9,13 +9,10 @@ public class ResourceNotFound extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
 	
-	//eg: dept,student..
 	private String resourceName;
 
-	//eg: name,roll.. dept_name
 	private String feildName;
 	
-	//eg: bca bba,99 ,sangita
 	private Object feildValue;
 	
 	

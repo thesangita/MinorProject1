@@ -9,24 +9,24 @@ import com.travel.entity.Religion;
 public class ReligionConverter {
     
     // Converts ReligionDto to Religion Entity
-    public Religion convertDtoToEntity(ReligionDto dto) {
-        Religion entity = new Religion();
+    public Religion convertDtoToEntity(ReligionDto religionDto) {
+        Religion religion = new Religion();
 
-        if (dto != null) {
+        if (religionDto != null) {
             // Copy properties from ReligionDto to Religion entity
-            BeanUtils.copyProperties(dto, entity);
+            BeanUtils.copyProperties(religionDto, religion);
         }
-        return entity;
+        return religion;
     }
 
     // Converts Religion Entity to ReligionDto
-    public ReligionDto convertEntityToDto(Religion entity) {
-        ReligionDto dto = new ReligionDto();
+    public ReligionDto convertEntityToDto(Religion religion) {
+        ReligionDto religionDto = new ReligionDto();
 
-        if (entity != null) {
+        if (religion != null) {
             // Copy properties from Religion entity to ReligionDto
-            BeanUtils.copyProperties(entity, dto);
+            BeanUtils.copyProperties(religion, religionDto);
         }
-        return dto;
+        return religionDto;
     }
 }

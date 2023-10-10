@@ -9,24 +9,24 @@ import com.travel.entity.Heritage;
 public class HeritageConverter {
     
     // Converts HeritageDto to Heritage Entity
-    public Heritage convertDtoToEntity(HeritageDto dto) {
-        Heritage entity = new Heritage();
+    public Heritage convertDtoToEntity(HeritageDto heritageDto ) {
+        Heritage heritage = new Heritage();
 
-        if (dto != null) {
+        if (heritageDto != null) {
             // Copy properties from HeritageDto to Heritage entity
-            BeanUtils.copyProperties(dto, entity);
+            BeanUtils.copyProperties(heritageDto, heritage);
         }
-        return entity;
+        return heritage;
     }
 
     // Converts Heritage Entity to HeritageDto
-    public HeritageDto convertEntityToDto(Heritage entity) {
-        HeritageDto dto = new HeritageDto();
+    public HeritageDto convertEntityToDto(Heritage heritage) {
+        HeritageDto heritageDto = new HeritageDto();
 
-        if (entity != null) {
+        if (heritage != null) {
             // Copy properties from Heritage entity to HeritageDto
-            BeanUtils.copyProperties(entity, dto);
+            BeanUtils.copyProperties(heritage, heritageDto);
         }
-        return dto;
+        return heritageDto;
     }
 }

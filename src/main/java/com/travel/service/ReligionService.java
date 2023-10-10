@@ -6,4 +6,5 @@ import com.travel.entity.Religion;
 public interface ReligionService {
 	
 	ReligionDto saveReligion(Religion religion);
+	void deleteReligiousPlaceByName(String ReligiousPlaceName) ;
 }

@@ -25,4 +25,11 @@ public class ForestServiceImpi implements ForestService {
 	    
 	    return forestConverter.convertEntityToDto(forest);
 	}
+
+	@Override
+	public void deleteForestByName(String forestName) {
+		
+		Forest forest = forestRepository.findForestByName(forestName);
+		forestRepository.delete(forest);		
+	}
 }

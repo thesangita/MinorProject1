@@ -9,22 +9,22 @@ import com.travel.entity.Destinations;
 public class DestinationsConverter {
     
     // Converts DestinationsDto to Destination Entity
-    public Destinations convertDtoToEntity(DestinationsDto dto) {
-        Destinations entity = new Destinations();
+    public Destinations convertDtoToEntity(DestinationsDto destDto) {
+        Destinations dest = new Destinations();
 
-        if (dto != null) {
-            BeanUtils.copyProperties(dto, entity);
+        if (destDto != null) {
+            BeanUtils.copyProperties(destDto, dest);
         }
-        return entity;
+        return dest;
     }
 
     // Converts Destination Entity to DestinationsDto
-    public DestinationsDto convertEntityToDto(Destinations entity) {
-        DestinationsDto dto = new DestinationsDto();
+    public DestinationsDto convertEntityToDto(Destinations dest) {
+        DestinationsDto destDto = new DestinationsDto();
 
-        if (entity != null) {
-            BeanUtils.copyProperties(entity, dto);
+        if (dest != null) {
+            BeanUtils.copyProperties(dest, destDto);
         }
-        return dto;
+        return destDto;
     }
 }

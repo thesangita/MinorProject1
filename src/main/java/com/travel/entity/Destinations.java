@@ -33,23 +33,26 @@ public class Destinations {
 	@Column(length = 50, nullable = false, unique = true)
 	private String destName;
 		
+
 	//jaipur
 	@Column(length = 100, nullable = false, unique = true)
 	private String imageLocation;
 	
 	//butifull hieracihal site in the desrt
-	@Column(length = 150, nullable = false)
+	@Column(length = 150, nullable = true)
 	private String imageDescription;
 	
 	//mountaun,desert
 	@Column(length = 50, nullable = false)
 	private String destType;
 	
+
 	//stars are calculated
 	private float popularityScore;
+
 	
 	@ManyToOne
-	private StateAndUT stateAndUT;
+	private String stateAndUT;
 	
 	@OneToOne
 	private ImageData imageData;

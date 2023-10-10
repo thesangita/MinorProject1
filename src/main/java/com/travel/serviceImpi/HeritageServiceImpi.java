@@ -25,4 +25,11 @@ public class HeritageServiceImpi implements HeritageService {
 	    
 	    return heritageConverter.convertEntityToDto(heritage);
 	}
+
+	@Override
+	public void deleteHeritagePlaceByName(String heritagePlaceName) {
+		
+		Heritage heritage = heritageRepository.findHeritageDestByName(heritagePlaceName);
+		heritageRepository.delete(heritage);			
+	}
 }

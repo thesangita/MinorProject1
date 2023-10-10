@@ -25,4 +25,11 @@ public class ReligionServiceImpi implements ReligionService {
 	    
 	    return religionConverter.convertEntityToDto(religion);
 	}
+
+	@Override
+	public void deleteReligiousPlaceByName(String ReligiousPlaceName) {
+		
+		Religion religion = religionRepository.findReligiousPlaceByName(ReligiousPlaceName);
+		religionRepository.delete(religion);			
+	}
 }

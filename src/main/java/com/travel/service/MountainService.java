@@ -6,4 +6,5 @@ import com.travel.entity.Mountain;
 public interface MountainService {
 	
 	MountainDto saveMountain(Mountain mountain);
+	void deleteMountainByName(String mountainName) ;
 }

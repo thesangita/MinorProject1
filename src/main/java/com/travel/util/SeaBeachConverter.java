@@ -9,24 +9,24 @@ import com.travel.entity.SeaBeach;
 public class SeaBeachConverter {
     
     // Converts SeaBeachDto to SeaBeach Entity
-    public SeaBeach convertDtoToEntity(SeaBeachDto dto) {
-        SeaBeach entity = new SeaBeach();
+    public SeaBeach convertDtoToEntity(SeaBeachDto seaBeachDto) {
+        SeaBeach seaBeach = new SeaBeach();
 
-        if (dto != null) {
+        if (seaBeachDto != null) {
             // Copy properties from SeaBeachDto to SeaBeach entity
-            BeanUtils.copyProperties(dto, entity);
+            BeanUtils.copyProperties(seaBeachDto, seaBeach);
         }
-        return entity;
+        return seaBeach;
     }
 
     // Converts SeaBeach Entity to SeaBeachDto
-    public SeaBeachDto convertEntityToDto(SeaBeach entity) {
-        SeaBeachDto dto = new SeaBeachDto();
+    public SeaBeachDto convertEntityToDto(SeaBeach seaBeach) {
+        SeaBeachDto seaBeachDto = new SeaBeachDto();
 
-        if (entity != null) {
+        if (seaBeach != null) {
             // Copy properties from SeaBeach entity to SeaBeachDto
-            BeanUtils.copyProperties(entity, dto);
+            BeanUtils.copyProperties(seaBeach, seaBeachDto);
         }
-        return dto;
+        return seaBeachDto;
     }
 }

@@ -6,4 +6,6 @@ import com.travel.entity.StateAndUT;
 public interface StateAndUTService {
 	
 	StateAndUTDto saveStateAndUT(StateAndUT stateAndUT);
+	void deleteStateAndUTByName(String stateAndUTName);
+	StateAndUTDto updateStateAndUT(int stateAndUTId, StateAndUT stateAndUT);
 }
