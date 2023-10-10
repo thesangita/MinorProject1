@@ -76,4 +76,10 @@ public class DestinationsController {
 		final Destinations destinations = destinationsConverter.convertDtoToEntity(destinationsDto);
 		return destinationsService.updateDestinations(destinationId, destinations);
 	}
-}
+	
+	@GetMapping("/getDestinationList")
+	public List<DestinationsDto> getDestinationList()
+	{
+		return destinationsService.getDestinationList();
+	}
+}	

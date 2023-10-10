@@ -117,4 +117,19 @@ public class DestinationsServiceImpi implements DestinationsService {
 		destinationsRepository.save(exisDestinations);
 		return destinationsConverter.convertEntityToDto(exisDestinations);
 	}
+
+	@Override
+	public List<DestinationsDto> getDestinationList() {
+		
+		List<Destinations> destinations = destinationsRepository.findAll();
+		
+		List<DestinationsDto> destinationsDto = new ArrayList<>();
+		
+		for(Destinations d : destinations)
+		{
+			DestinationsDto destinationDto = destinationsConverter.convertEntityToDto(d);
+			destinationsDto.add(destinationDto);
+		}
+		return destinationsDto;
+	}
 }

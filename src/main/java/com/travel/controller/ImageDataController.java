@@ -2,6 +2,7 @@ package com.travel.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ public class ImageDataController {
 	public ResponseEntity<?> uploadImage(@RequestParam("imageFile")MultipartFile file) throws IOException {
 		
 		
+
 		// Check the file extension to determine the image format
 	    String originalFileName = file.getOriginalFilename();
 	    String fileExtension = originalFileName.substring(originalFileName.lastIndexOf(".") + 1).toLowerCase();
@@ -85,6 +87,12 @@ private String getContentTypeFromFileName(String fileName) {
         // Handle other formats as needed
         return "application/octet-stream"; // Default to binary if format is unknown
     }
+}
+
+@GetMapping("/getImage")
+public List<byte[]> getImageDataList()
+{
+	return imageDataService.getImageList();
 }
 
 	

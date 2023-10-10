@@ -20,4 +20,6 @@ public interface DestinationsService {
 	void assImgToDest(Long iId, int dId);
 	
 	DestinationsDto updateDestinations(int destId, Destinations destinations);
+	
+	List<DestinationsDto> getDestinationList();
 }

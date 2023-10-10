@@ -1,6 +1,8 @@
 package com.travel.serviceImpi;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,20 @@ public class ImageDataServiceImpi implements ImageDataService {
         byte[] images=imageDataComDecom.decompressImage(dbImageData.get().getImageData());
         return images;
 		
+	}
+
+	@Override
+	public List<byte[]> getImageList() {
+		
+		List<ImageData> imageData = imageRepository.findAll();
+		
+		List<byte[]> onlyImageData = new ArrayList();
+		
+		for(ImageData i : imageData)
+		{
+			onlyImageData.add(i.getImageData());
+		}
+		return onlyImageData;
 	}
 
 }
