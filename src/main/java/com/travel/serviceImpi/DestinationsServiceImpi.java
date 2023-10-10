@@ -104,4 +104,20 @@ public class DestinationsServiceImpi implements DestinationsService {
 		
 		destinationsRepository.save(destinations);
 	}
+	
+	@Override
+	public DestinationsDto updateDestinations(int destId, Destinations destinations) {
+		
+		Destinations exisDestinations =  destinationsRepository.findById(destId).orElseThrow(()-> new ResourceNotFound("Destination", "id", destId));
+		
+		exisDestinations.setDestId(destinations.getDestId());
+		exisDestinations.setDestName(destinations.getDestName());
+		exisDestinations.setDestType(destinations.getDestType());
+		exisDestinations.setImageDescription(destinations.getImageDescription());
+		exisDestinations.setLocation(destinations.getLocation());
+		exisDestinations.setRating(destinations.getRating());
+
+		destinationsRepository.save(exisDestinations);
+		return destinationsConverter.convertEntityToDto(exisDestinations);
+	}
 }
