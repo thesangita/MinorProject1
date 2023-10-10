@@ -20,7 +20,4 @@ public class StateAndUTDto {
     @Size(max = 50, message = "Max. limit is 50")
     @NotNull(message = "State or UT name is required")
     private String stateAndUtName;
-    
-    @OneToMany
-	private List<Destinations> destinations;  
 }

@@ -50,11 +50,11 @@ public class DestinationsController {
     	return destinationsService.getDestinationByName(name);
     }
 	
-	@PostMapping("/createDestination/{destName}/{destType}/{location}/{stateAndUTName}/{rating}/{description}")
-	public DestinationsDto createDestination(@PathVariable("destName") String destName,@PathVariable("destType") String destType,@PathVariable("location") String location,@PathVariable("stateAndUTName") String stateAndUTName,@PathVariable("rating") int rating,@PathVariable("description") String description)
-	{
-		return destinationsService.createDestination(destName, destType, location, stateAndUTName, description,rating);
-	}
+//	@PostMapping("/createDestination/{destName}/{destType}/{location}/{stateAndUTName}/{rating}/{description}")
+//	public DestinationsDto createDestination(@PathVariable("destName") String destName,@PathVariable("destType") String destType,@PathVariable("location") String location,@PathVariable("stateAndUTName") String stateAndUTName,@PathVariable("rating") int rating,@PathVariable("description") String description)
+//	{
+//		return destinationsService.createDestination(destName, destType, location, stateAndUTName, description,rating);
+//	}
 	
 	@GetMapping("/getDestinationListByType/{destType}")
 	public List<DestinationsDto> getDestinationByType(@PathVariable("destType") String destType)
@@ -62,7 +62,7 @@ public class DestinationsController {
 		return destinationsService.getDestinationByType(destType);
 	}
 	
-	@PostMapping("/assImgToDest/{iId}/{dId}")
+	@PostMapping("/assImg/{iId}/ToDest/{dId}")
 	public String assignImageToDest(@PathVariable("iId") Long imageId, @PathVariable("dId") int destinationId)
 	{
 		destinationsService.assImgToDest(imageId, destinationId);

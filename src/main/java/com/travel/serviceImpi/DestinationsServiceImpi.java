@@ -10,7 +10,6 @@ import com.travel.exception.ResourceNotFound;
 import com.travel.dto.DestinationsDto;
 import com.travel.entity.Destinations;
 import com.travel.entity.ImageData;
-import com.travel.entity.StateAndUT;
 import com.travel.repository.DestinationsRepository;
 import com.travel.repository.ImageDataRepository;
 import com.travel.repository.StateAndUTRepository;
@@ -72,26 +71,26 @@ public class DestinationsServiceImpi implements DestinationsService {
 		return destinationsDto;
 	}
 
-	@Override
-	public DestinationsDto createDestination(String destName, String destType, String location, String stateAndUT, String description, int rating) {
-		
-		Destinations destination = new Destinations();
-		destination.setDestName(destName);
-		destination.setDestType(destType);
-		destination.setImageDescription(description);
-		destination.setLocation(location);
-		
-		List<StateAndUT> stateAndUTs = stateAndUTRepository.findAll();
-		for(StateAndUT su : stateAndUTs)
-		{
-			if(su.getStateAndUtName().equalsIgnoreCase(stateAndUT))
-			{
-				destination.setStateAndUT(su);
-			}
-		}
-		destinationsRepository.save(destination);
-		return destinationsConverter.convertEntityToDto(destination);
-	}
+//	@Override
+//	public DestinationsDto createDestination(String destName, String destType, String location, String stateAndUT, String description, int rating) {
+//		
+//		Destinations destination = new Destinations();
+//		destination.setDestName(destName);
+//		destination.setDestType(destType);
+//		destination.setImageDescription(description);
+//		destination.setLocation(location);
+//		
+//		List<StateAndUT> stateAndUTs = stateAndUTRepository.findAll();
+//		for(StateAndUT su : stateAndUTs)
+//		{
+//			if(su.getStateAndUtName().equalsIgnoreCase(stateAndUT))
+//			{
+//				destination.setStateAndUT(su);
+//			}
+//		}
+//		destinationsRepository.save(destination);
+//		return destinationsConverter.convertEntityToDto(destination);
+//	}
 
 	@Override
 	public void assImgToDest(Long iId, int dId) {
@@ -113,9 +112,7 @@ public class DestinationsServiceImpi implements DestinationsService {
 		exisDestinations.setDestId(destinations.getDestId());
 		exisDestinations.setDestName(destinations.getDestName());
 		exisDestinations.setDestType(destinations.getDestType());
-		exisDestinations.setImageDescription(destinations.getImageDescription());
-		exisDestinations.setLocation(destinations.getLocation());
-		exisDestinations.setRating(destinations.getRating());
+		exisDestinations.setImageDescription(destinations.getImageDescription());	
 
 		destinationsRepository.save(exisDestinations);
 		return destinationsConverter.convertEntityToDto(exisDestinations);
