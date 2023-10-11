@@ -22,7 +22,7 @@ public class DestinationsDto {
 
     @NotBlank(message = "location is required")
     @Size(max = 100, message = "Max. limit is 100")
-    private String location;
+    private String imageLocation;
 
     @Size(max = 150, message = "Max. limit is 150")
     private String imageDescription;

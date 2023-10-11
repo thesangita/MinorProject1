@@ -33,7 +33,7 @@ public class DestinationsController {
 	@Autowired
 	DestinationsConverter destinationsConverter;
 	
-	@PostMapping("/saveDestination")
+	@PostMapping
 	public DestinationsDto saveDestination(@Valid @RequestBody DestinationsDto destinationsDto)
 	{
 		final Destinations destinations = destinationsConverter.convertDtoToEntity(destinationsDto);
@@ -41,40 +41,7 @@ public class DestinationsController {
 		return destinationsService.saveDestinations(destinations);
 	}
 	
-	@DeleteMapping("/deleteDestinationByName/{name}")
-	public ResponseEntity<String> deleteDestinationByName(@PathVariable("name") String name)
-	{
-		destinationsService.deleteDestinationByName(name);
-		return new ResponseEntity<String>(name + " is deleted successfully!!", HttpStatus.OK);	
-	}
-	
-	@GetMapping("/getDestinationByName/{name}")
-	public DestinationsDto getDestinationByName(@PathVariable("name") String name)
-    {
-    	return destinationsService.getDestinationByName(name);
-    }
-	
-//	@PostMapping("/createDestination/{destName}/{destType}/{location}/{stateAndUTName}/{rating}/{description}")
-//	public DestinationsDto createDestination(@PathVariable("destName") String destName,@PathVariable("destType") String destType,@PathVariable("location") String location,@PathVariable("stateAndUTName") String stateAndUTName,@PathVariable("rating") int rating,@PathVariable("description") String description)
-//	{
-//		return destinationsService.createDestination(destName, destType, location, stateAndUTName, description,rating);
-//	}
-	
-	@GetMapping("/getDestinationListByType/{destType}")
-	public List<DestinationsDto> getDestinationByType(@PathVariable("destType") String destType)
-	{
-		return destinationsService.getDestinationByType(destType);
-	}
-	
-	@PostMapping("/assImg/{iId}/ToDest/{dId}")
-	public String assignImageToDest(@PathVariable("iId") Long imageId, @PathVariable("dId") int destinationId)
-	{
-		destinationsService.assImgToDest(imageId, destinationId);
-		
-		return "Image assigned to Destination Successfully!";
-	}
-	
-	@PutMapping("/updateDestination/{id}")
+	@PutMapping("/{id}")
 	public DestinationsDto updateDestination(@PathVariable("id") int destinationId, @Valid @RequestBody DestinationsDto destinationsDto)
 	{
 		final Destinations destinations = destinationsConverter.convertDtoToEntity(destinationsDto);
@@ -86,4 +53,40 @@ public class DestinationsController {
 	{
 		return destinationsService.getDestinationList();
 	}
+	
+	//delete dest by id
+	
+	
+	
+	
+	@PostMapping("/assImg/{iId}/ToDest/{dId}")
+	public String assignImageToDest(@PathVariable("iId") Long imageId, @PathVariable("dId") int destinationId)
+	{
+		destinationsService.assImgToDest(imageId, destinationId);
+		
+		return "Image assigned to Destination Successfully!";
+	}
+	
+	
+	
+//	======================= custom methods====================
+	
+	@GetMapping("/getDestinationListByType/{destType}")
+	public List<DestinationsDto> getDestinationByType(@PathVariable("destType") String destType)
+	{
+		return destinationsService.getDestinationByType(destType);
+	}
+	
+	@DeleteMapping("/{name}")
+	public ResponseEntity<String> deleteDestinationByName(@PathVariable("name") String name)
+	{
+		destinationsService.deleteDestinationByName(name);
+		return new ResponseEntity<String>(name + " is deleted successfully!!", HttpStatus.OK);	
+	}
+	
+	@GetMapping("/getDestinationByName/{name}")
+	public DestinationsDto getDestinationByName(@PathVariable("name") String name)
+    {
+    	return destinationsService.getDestinationByName(name);
+    }
 }	
