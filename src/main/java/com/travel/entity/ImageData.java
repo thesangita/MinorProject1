@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,4 +39,6 @@ public class ImageData {
     @Column(length = 1000) // Customizes the database column mapping for 'imageData'.
     private byte[] imageData; // Stores binary image data.
 
+	@OneToOne
+	private Destinations destination;
 }

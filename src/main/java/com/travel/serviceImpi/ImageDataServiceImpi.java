@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,26 +46,13 @@ public class ImageDataServiceImpi implements ImageDataService {
 		
 	}
 
-//	@Override
-//	public List<byte[]> getImageList() {
-//		
-//		List<ImageData> imageData = imageRepository.findAll();
-//		
-//		List<byte[]> onlyImageData = new ArrayList();
-//		
-//		for(ImageData i : imageData)
-//		{
-//			onlyImageData.add(i.getImageData());
-//		}
-//		return onlyImageData;
-//	}
-	
 	@Override
-	public List<ImageData> getImageList() {
-		
-		List<ImageData> imageData = imageRepository.findAll();
-		
-		return imageData;
-	}
+	 public List<byte[]> getImageList() {
+	        List<ImageData> dbImageList = imageRepository.findAll();
+	        List<byte[]> images = dbImageList.stream()
+	                .map(imageData -> imageDataComDecom.decompressImage(imageData.getImageData()))
+	                .collect(Collectors.toList());
+	        return images;
+	    }
 
 }

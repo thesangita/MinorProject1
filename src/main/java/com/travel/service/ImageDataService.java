@@ -15,5 +15,5 @@ public interface ImageDataService {
 	//method to show the image to the user
 	byte[] downloadImage(String fileName);
 	
-	List<ImageData> getImageList();
+	List<byte[]> getImageList();
 }
