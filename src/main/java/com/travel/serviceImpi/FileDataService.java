@@ -27,7 +27,7 @@ public class FileDataService {
 	//@Autowired
 	//private ImageDataComDecom imageDataComDecom;
 	
-	private final String FOLDER_PATH="C:/Users/LENOVO/Desktop/FrontEnd/FrontEndMinorProject/TourProject/minorProjectFrontend/src/assets/newimages/";
+	private final String FOLDER_PATH="S:/minor_project/frontenCopy/fontentcopy/src/assets/images/";
 	
 	public String uploadImageToFileSystem(MultipartFile file) throws IOException {
         String filePath=FOLDER_PATH+file.getOriginalFilename();

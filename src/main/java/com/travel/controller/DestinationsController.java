@@ -23,7 +23,7 @@ import com.travel.service.DestinationsService;
 import com.travel.util.DestinationsConverter;
 
 @RestController
-//@RequestMapping("/destination")
+@RequestMapping("/destination")
 @CrossOrigin(origins="http://localhost:4200")
 public class DestinationsController {
 	
@@ -33,7 +33,7 @@ public class DestinationsController {
 	@Autowired
 	DestinationsConverter destinationsConverter;
 	
-	@PostMapping
+	@PostMapping("/saveDest")
 	public DestinationsDto saveDestination(@Valid @RequestBody DestinationsDto destinationsDto)
 	{
 		final Destinations destinations = destinationsConverter.convertDtoToEntity(destinationsDto);
