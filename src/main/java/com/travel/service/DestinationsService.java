@@ -17,7 +17,7 @@ public interface DestinationsService {
 	
 	//DestinationsDto createDestination(String destName, String destType, String location, String stateAndUT, String description, int rating);
 	
-	void assImgToDest(Long iId, int dId);
+	//void assImgToDest(Long iId, int dId);
 	
 	DestinationsDto updateDestinations(int destId, Destinations destinations);
 	

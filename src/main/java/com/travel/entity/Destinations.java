@@ -54,7 +54,6 @@ public class Destinations {
 	private String stateAndUTName;
 
 	
-	@OneToOne
-	private ImageData imageData;
+	private String imageFile;
 
 }

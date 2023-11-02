@@ -22,7 +22,7 @@ public class DestinationsDto {
 
     @NotBlank(message = "location is required")
     @Size(max = 100, message = "Max. limit is 100")
-    private String location;
+    private String imageLocation;
 
     @Size(max = 150, message = "Max. limit is 150")
     private String imageDescription;
@@ -31,12 +31,11 @@ public class DestinationsDto {
     @Size(max = 50, message = "Max. limit is 50")
     private String destType;
 
-    private int rating;
+    private float popularityScore;
     
     @NotBlank(message = "State or UT name is required")
     @Size(max = 60, message = "Max. limit is 60")
     private String stateAndUTName;
     
-    @OneToOne
-	private ImageData imageData;
+	private String imageFile;
 }

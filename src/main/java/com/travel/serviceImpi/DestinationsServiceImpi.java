@@ -92,17 +92,17 @@ public class DestinationsServiceImpi implements DestinationsService {
 //		return destinationsConverter.convertEntityToDto(destination);
 //	}
 
-	@Override
-	public void assImgToDest(Long iId, int dId) {
-		
-		Destinations destinations = destinationsRepository.findById(dId).orElseThrow(()-> new ResourceNotFound("Destination", "id", dId));
-		
-		ImageData imageData = imageDataRepository.findById(iId).orElseThrow(()-> new ResourceNotFound("Image", "id", iId));
-		
-		destinations.setImageData(imageData);
-		
-		destinationsRepository.save(destinations);
-	}
+//	@Override
+//	public void assImgToDest(Long iId, int dId) {
+//		
+//		Destinations destinations = destinationsRepository.findById(dId).orElseThrow(()-> new ResourceNotFound("Destination", "id", dId));
+//		
+//		ImageData imageData = imageDataRepository.findById(iId).orElseThrow(()-> new ResourceNotFound("Image", "id", iId));
+//		
+//		destinations.setImageData(imageData);
+//		
+//		destinationsRepository.save(destinations);
+//	}
 	
 	@Override
 	public DestinationsDto updateDestinations(int destId, Destinations destinations) {

@@ -23,7 +23,7 @@ import com.travel.service.DestinationsService;
 import com.travel.util.DestinationsConverter;
 
 @RestController
-@RequestMapping("/destination")
+//@RequestMapping("/destination")
 @CrossOrigin(origins="http://localhost:4200")
 public class DestinationsController {
 	
@@ -66,13 +66,13 @@ public class DestinationsController {
 		return destinationsService.getDestinationByType(destType);
 	}
 	
-	@PostMapping("/assImg/{iId}/ToDest/{dId}")
-	public String assignImageToDest(@PathVariable("iId") Long imageId, @PathVariable("dId") int destinationId)
-	{
-		destinationsService.assImgToDest(imageId, destinationId);
-		
-		return "Image assigned to Destination Successfully!";
-	}
+//	@PostMapping("/assImg/{iId}/ToDest/{dId}")
+//	public String assignImageToDest(@PathVariable("iId") Long imageId, @PathVariable("dId") int destinationId)
+//	{
+//		destinationsService.assImgToDest(imageId, destinationId);
+//		
+//		return "Image assigned to Destination Successfully!";
+//	}
 	
 	@PutMapping("/updateDestination/{id}")
 	public DestinationsDto updateDestination(@PathVariable("id") int destinationId, @Valid @RequestBody DestinationsDto destinationsDto)

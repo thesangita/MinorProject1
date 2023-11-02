@@ -10,5 +10,6 @@ public interface DestinationsRepository extends JpaRepository<Destinations, Inte
 	
 	@Query("SELECT d FROM Destinations d WHERE d.destName = :name")
 	Destinations findDestinationByName(@Param("name") String name);
+	
 
 }
