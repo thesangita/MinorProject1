@@ -46,7 +46,7 @@ public class FileDataService {
         	Destinations destination= destinationsRepository.findDestinationByName(destName.substring(0, destName.length() - 4));
         	//String name = file.getOriginalFilename();
         	
-        	destination.setImageFile("asset/images/"+destName);
+        	destination.setImageFile("assets/images/"+destName);
         	destinationsRepository.save(destination);
         	
             return "file uploaded successfully : " + filePath;

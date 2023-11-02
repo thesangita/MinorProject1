@@ -39,70 +39,6 @@ public class DestinationsServiceImpi implements DestinationsService {
 	    return destinationsConverter.convertEntityToDto(destinations);
 	}
 	
-	@Override
-	public void deleteDestinationByName(String destinationName) {
-		
-		Destinations destinations = destinationsRepository.findDestinationByName(destinationName);
-		destinationsRepository.delete(destinations);		
-	}
-
-	@Override
-	public DestinationsDto getDestinationByName(String destinationName) {
-		
-		Destinations destinations = destinationsRepository.findDestinationByName(destinationName);
-		return destinationsConverter.convertEntityToDto(destinations);
-	}
-
-	@Override
-	public List<DestinationsDto> getDestinationByType(String destinationtype) {
-		
-		List<Destinations> destinations = destinationsRepository.findAll();
-		
-		List<DestinationsDto> destinationsDto = new ArrayList<>();
-		
-		for(Destinations d : destinations)
-		{
-			if(d.getDestType().equals(destinationtype))
-			{
-				DestinationsDto destinationDto = destinationsConverter.convertEntityToDto(d);
-				destinationsDto.add(destinationDto);
-		    }
-		}
-		return destinationsDto;
-	}
-
-//	@Override
-//	public DestinationsDto createDestination(String destName, String destType, String location, String stateAndUT, String description, int rating) {
-//		
-//		Destinations destination = new Destinations();
-//		destination.setDestName(destName);
-//		destination.setDestType(destType);
-//		destination.setImageDescription(description);
-//		destination.setLocation(location);
-//		
-//		List<StateAndUT> stateAndUTs = stateAndUTRepository.findAll();
-//		for(StateAndUT su : stateAndUTs)
-//		{
-//			if(su.getStateAndUtName().equalsIgnoreCase(stateAndUT))
-//			{
-//				destination.setStateAndUT(su);
-//			}
-//		}
-//		destinationsRepository.save(destination);
-//		return destinationsConverter.convertEntityToDto(destination);
-//	}
-
-//	@Override
-//	public void assImgToDest(Long iId, int dId) {
-//		
-//		Destinations destinations = destinationsRepository.findById(dId).orElseThrow(()-> new ResourceNotFound("Destination", "id", dId));
-//		
-//		ImageData imageData = imageDataRepository.findById(iId).orElseThrow(()-> new ResourceNotFound("Image", "id", iId));
-//		
-//		destinations.setImageData(imageData);
-//		
-//		destinationsRepository.save(destinations);
-//	}
 	
 	@Override
 	public DestinationsDto updateDestinations(int destId, Destinations destinations) {
@@ -131,5 +67,15 @@ public class DestinationsServiceImpi implements DestinationsService {
 			destinationsDto.add(destinationDto);
 		}
 		return destinationsDto;
+	}
+
+
+	@Override
+	public void deleteDestinationById(int destId) {
+		
+		Destinations destination =  destinationsRepository.findById(destId).orElseThrow(()-> new ResourceNotFound("Destination", "id",destId));
+		destinationsRepository.delete(destination);
+		
+		
 	}
 }
