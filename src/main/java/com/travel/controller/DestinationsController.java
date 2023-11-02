@@ -33,7 +33,7 @@ public class DestinationsController {
 	@Autowired
 	DestinationsConverter destinationsConverter;
 	
-	@PostMapping
+	@PostMapping("/saveDest")
 	public DestinationsDto saveDestination(@Valid @RequestBody DestinationsDto destinationsDto)
 	{
 		final Destinations destinations = destinationsConverter.convertDtoToEntity(destinationsDto);
