@@ -8,6 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.travel.entity.Destinations;
 import com.travel.entity.FileData;
+import com.travel.exception.ResourceNotFound;
 import com.travel.repository.DestinationsRepository;
 import com.travel.repository.FileDataRepository;
 import com.travel.util.ImageDataComDecom;
@@ -60,6 +61,12 @@ public class FileDataService {
         String filePath=fileData.get().getFilePath();
         byte[] images = Files.readAllBytes(new File(filePath).toPath());
         return images;
+    }
+    
+    public void imageDelete(int id) {
+    	FileData fileData = fileDataRepository.findById(id)
+    			.orElseThrow(()-> new ResourceNotFound("Image", "id",id));
+    	fileDataRepository.delete(fileData);
     }
 
 }

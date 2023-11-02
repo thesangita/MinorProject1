@@ -30,6 +30,9 @@ public class DestinationsServiceImpi implements DestinationsService {
 	
 	@Autowired
 	ImageDataRepository imageDataRepository;
+	
+	@Autowired
+	FileDataService fileDataService;
 
 	@Override
 	public DestinationsDto saveDestinations(Destinations destinations) {
@@ -45,7 +48,7 @@ public class DestinationsServiceImpi implements DestinationsService {
 		
 		Destinations exisDestinations =  destinationsRepository.findById(destId).orElseThrow(()-> new ResourceNotFound("Destination", "id", destId));
 		
-		exisDestinations.setDestId(destinations.getDestId());
+		
 		exisDestinations.setDestName(destinations.getDestName());
 		exisDestinations.setDestType(destinations.getDestType());
 		exisDestinations.setImageDescription(destinations.getImageDescription());	
@@ -76,6 +79,8 @@ public class DestinationsServiceImpi implements DestinationsService {
 		Destinations destination =  destinationsRepository.findById(destId).orElseThrow(()-> new ResourceNotFound("Destination", "id",destId));
 		destinationsRepository.delete(destination);
 		
+		//call delete method for image as well
+		fileDataService.imageDelete(destId);
 		
 	}
 }
