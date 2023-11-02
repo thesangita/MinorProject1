@@ -67,6 +67,7 @@ public class FileDataService {
     	FileData fileData = fileDataRepository.findById(id)
     			.orElseThrow(()-> new ResourceNotFound("Image", "id",id));
     	fileDataRepository.delete(fileData);
+    	
     }
 
 }

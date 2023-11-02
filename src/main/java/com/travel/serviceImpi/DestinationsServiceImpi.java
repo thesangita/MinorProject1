@@ -80,7 +80,10 @@ public class DestinationsServiceImpi implements DestinationsService {
 		destinationsRepository.delete(destination);
 		
 		//call delete method for image as well
-		fileDataService.imageDelete(destId);
+		if(destinationsRepository.findById(destId).get().getImageFile() != null) {
+			fileDataService.imageDelete(destId);
+		}
+		
 		
 	}
 }
