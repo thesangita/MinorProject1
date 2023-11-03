@@ -11,7 +11,6 @@ import com.travel.entity.FileData;
 import com.travel.exception.ResourceNotFound;
 import com.travel.repository.DestinationsRepository;
 import com.travel.repository.FileDataRepository;
-import com.travel.util.ImageDataComDecom;
 import java.io.File;
 import java.util.Optional;
 import java.nio.file.Files;

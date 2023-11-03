@@ -9,10 +9,7 @@ import org.springframework.stereotype.Service;
 import com.travel.exception.ResourceNotFound;
 import com.travel.dto.DestinationsDto;
 import com.travel.entity.Destinations;
-import com.travel.entity.ImageData;
 import com.travel.repository.DestinationsRepository;
-import com.travel.repository.ImageDataRepository;
-import com.travel.repository.StateAndUTRepository;
 import com.travel.service.DestinationsService;
 import com.travel.util.DestinationsConverter;
 
@@ -24,12 +21,6 @@ public class DestinationsServiceImpi implements DestinationsService {
 	
 	@Autowired
 	DestinationsConverter destinationsConverter;
-	
-	@Autowired
-	StateAndUTRepository stateAndUTRepository;
-	
-	@Autowired
-	ImageDataRepository imageDataRepository;
 	
 	@Autowired
 	FileDataService fileDataService;
