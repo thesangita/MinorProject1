@@ -24,40 +24,49 @@ import com.travel.util.DestinationsConverter;
 
 @RestController
 @RequestMapping("/destination")
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class DestinationsController {
-	
-	@Autowired
-	DestinationsService destinationsService;
-	
-	@Autowired
-	DestinationsConverter destinationsConverter;
-	
-	@PostMapping("/saveDest")
-	public DestinationsDto saveDestination(@Valid @RequestBody DestinationsDto destinationsDto)
-	{
-		final Destinations destinations = destinationsConverter.convertDtoToEntity(destinationsDto);
-		
-		return destinationsService.saveDestinations(destinations);
-	}
-	
-	@DeleteMapping("/deleteDestinationById/{id}")
-	public ResponseEntity<String> deleteDestinationById(@PathVariable("id") int destId)
-	{
-		destinationsService.deleteDestinationById(destId);
-		return new ResponseEntity<String>(destId + " is deleted successfully!!", HttpStatus.OK);	
-	}
-	
-	@PutMapping("/updateDestination/{id}")
-	public DestinationsDto updateDestination(@PathVariable("id") int destinationId, @Valid @RequestBody DestinationsDto destinationsDto)
-	{
-		final Destinations destinations = destinationsConverter.convertDtoToEntity(destinationsDto);
-		return destinationsService.updateDestinations(destinationId, destinations);
-	}
-	
-	@GetMapping("/getDestinationList")
-	public List<DestinationsDto> getDestinationList()
-	{
-		return destinationsService.getDestinationList();
-	}
-}	
+
+    @Autowired
+    DestinationsService destinationsService; // Autowired service for managing destinations
+
+    @Autowired
+    DestinationsConverter destinationsConverter; // Autowired converter for converting DTOs and entities
+
+    // Endpoint for saving a destination
+    @PostMapping("/saveDest")
+    public DestinationsDto saveDestination(@Valid @RequestBody DestinationsDto destinationsDto) {
+        // Convert the DTO to an entity
+        final Destinations destinations = destinationsConverter.convertDtoToEntity(destinationsDto);
+
+        // Call the service to save the destination and return the result
+        return destinationsService.saveDestinations(destinations);
+    }
+
+    // Endpoint for deleting a destination by its ID
+    @DeleteMapping("/deleteDestinationById/{id}")
+    public ResponseEntity<String> deleteDestinationById(@PathVariable("id") int destId) {
+        // Call the service to delete the destination by its ID
+        destinationsService.deleteDestinationById(destId);
+
+        // Return a response indicating successful deletion
+        return new ResponseEntity<String>(destId + " is deleted successfully!!", HttpStatus.OK);
+    }
+
+    // Endpoint for updating a destination by its ID
+    @PutMapping("/updateDestination/{id}")
+    public DestinationsDto updateDestination(@PathVariable("id") int destinationId, @Valid @RequestBody DestinationsDto destinationsDto) {
+        // Convert the DTO to an entity
+        final Destinations destinations = destinationsConverter.convertDtoToEntity(destinationsDto);
+
+        // Call the service to update the destination by its ID and return the result
+        return destinationsService.updateDestinations(destinationId, destinations);
+    }
+
+    // Endpoint for retrieving a list of destinations
+    @GetMapping("/getDestinationList")
+    public List<DestinationsDto> getDestinationList() {
+        // Call the service to get a list of destinations and return it
+        return destinationsService.getDestinationList();
+    }
+}

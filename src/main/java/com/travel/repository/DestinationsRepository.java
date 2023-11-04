@@ -7,9 +7,12 @@ import org.springframework.data.repository.query.Param;
 import com.travel.entity.Destinations;
 
 public interface DestinationsRepository extends JpaRepository<Destinations, Integer> {
-	
-	@Query("SELECT d FROM Destinations d WHERE d.destName = :name")
-	Destinations findDestinationByName(@Param("name") String name);
-	
+    // This interface extends JpaRepository to perform common database operations on the Destinations entity.
 
+    @Query("SELECT d FROM Destinations d WHERE d.destName = :name")
+    // Specifies a custom query using JPQL (Java Persistence Query Language).
+    Destinations findDestinationByName(@Param("name") String name);
+    // This method finds a destination by its name using the custom query.
+
+    // Other CRUD (Create, Read, Update, Delete) methods for the Destinations entity are inherited from JpaRepository.
 }
