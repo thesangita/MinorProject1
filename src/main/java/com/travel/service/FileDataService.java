@@ -10,5 +10,5 @@ public interface FileDataService {
 	
 	public byte[] downloadImageFromFileSystem(String fileName) throws IOException ;//method to download image
 	
-	public void imageDelete(int id);//method to deleyet image
+	public void imageDelete(int id);//method to delete image
 }
