@@ -27,7 +27,7 @@ public class DestinationsServiceImpi implements DestinationsService {
     DestinationsConverter destinationsConverter; // Converter for converting between entity and DTO.
 	
 	@Autowired
-    FileDataService fileDataService; // Service for managing file data.
+    FileDataServiceImpi fileDataServiceImpi; // Service for managing file data.
 
  @Override
  public DestinationsDto saveDestinations(Destinations destinations) {
@@ -89,7 +89,7 @@ public class DestinationsServiceImpi implements DestinationsService {
      // Delete the destination from the repository.
 
      if (destinationsRepository.findById(destId).get().getImageFile() != null) {
-         fileDataService.imageDelete(destId);
+         fileDataServiceImpi.imageDelete(destId);
      }
      // If the destination has an associated image file, call the imageDelete method in the FileDataService to delete it.
  }

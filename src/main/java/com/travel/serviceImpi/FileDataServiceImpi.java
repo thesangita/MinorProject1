@@ -11,6 +11,8 @@ import com.travel.entity.FileData;
 import com.travel.exception.ResourceNotFound;
 import com.travel.repository.DestinationsRepository;
 import com.travel.repository.FileDataRepository;
+import com.travel.service.FileDataService;
+
 import java.io.File;
 import java.util.Optional;
 import java.nio.file.Files;
@@ -18,7 +20,7 @@ import java.nio.file.Files;
 @Service
 //Indicates that this class is a Spring service component.
 
-public class FileDataService {
+public class FileDataServiceImpi implements FileDataService {
 
  @Autowired
  private FileDataRepository fileDataRepository;
