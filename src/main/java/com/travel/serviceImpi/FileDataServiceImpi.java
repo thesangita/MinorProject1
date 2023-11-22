@@ -35,7 +35,8 @@ public class FileDataServiceImpi implements FileDataService {
 
  private final String FOLDER_PATH = "S:/minor_project/frontenCopy/fontentcopy/src/assets/images/";
  // Specifies the folder path where uploaded images will be stored.
-
+ 
+ @Override
  public String uploadImageToFileSystem(MultipartFile file) throws IOException {
      // Method to upload an image to the file system.
 
@@ -70,7 +71,7 @@ public class FileDataServiceImpi implements FileDataService {
 
      return null;
  }
-
+ @Override
  public byte[] downloadImageFromFileSystem(String fileName) throws IOException {
      // Method to download an image from the file system.
 
@@ -85,7 +86,7 @@ public class FileDataServiceImpi implements FileDataService {
 
      return images;
  }
-
+ @Override
  public void imageDelete(int id) {
      // Method to delete an image from the file system.
 
