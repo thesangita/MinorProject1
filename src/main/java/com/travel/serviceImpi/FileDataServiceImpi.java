@@ -33,7 +33,7 @@ public class FileDataServiceImpi implements FileDataService {
  // private ImageDataComDecom imageDataComDecom;
  // It seems to be a commented-out field for another functionality or dependency.
 
- private final String FOLDER_PATH = "S:/minor_project/frontenCopy/fontentcopy/src/assets/images/";
+ private final String FOLDER_PATH = "C:/WanderQuest/fontentcopy/src/assets/images";
  // Specifies the folder path where uploaded images will be stored.
  
  @Override
